@@ -16,9 +16,7 @@ Generates a CSV file with computer names and BitLocker Recovery Keys.
 ```bash
 .\Get-ADComputers-BitLockerInfo.ps1
 ```
-
   or
-
 ```bash
 .\Get-ADComputers-BitLockerInfo.ps1 -OU "OU=Computers,OU=IT Department,DC=myDomain,DC=com"
 ```
