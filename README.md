@@ -1,4 +1,4 @@
-# Get-ADComputers-BitLockerInfo.ps1
+# Get-ADComputers-BitLockerInfo
 
 DESCRIPTION
 Get BitLocker Recovery Information from Active Directory.
@@ -9,7 +9,7 @@ Requirement of the script:
  - Active Directory PowerShell Module
  - Needed rights to view AD BitLocker Recovery Info
  
- Usage:
-  .\Get-ADComputers-BitLockerInfo.ps1
+ <B>Usage</B>
+ .\Get-ADComputers-BitLockerInfo.ps1
   or
   .\Get-ADComputers-BitLockerInfo.ps1 -OU "OU=Computers,OU=IT Department,DC=myDomain,DC=com"
