@@ -23,3 +23,6 @@ Generates a CSV file with computer names and BitLocker Recovery Keys.
 ```bash
 .\Get-ADComputers-BitLockerInfo.ps1 -OU "OU=Computers,OU=IT Department,DC=myDomain,DC=com"
 ```
+
+More info:
+https://angry-admin.blogspot.com/2018/07/powershell-script-get-bitlocker.html
