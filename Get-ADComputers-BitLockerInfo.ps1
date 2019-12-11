@@ -1,4 +1,35 @@
-﻿#Requires -Version 2.0
+﻿<#PSScriptInfo
+
+.VERSION 2.0
+
+.GUID 5df64425-ed5b-489d-813b-936a6865c6a5
+
+.AUTHOR Andriy Zarevych
+
+.COMPANYNAME
+
+.COPYRIGHT (c) 2018 Andriy Zarevych
+
+.TAGS ActiveDirectory BitLocker
+
+.LICENSEURI
+
+.PROJECTURI
+
+.ICONURI
+
+.EXTERNALMODULEDEPENDENCIES ActiveDirectory
+
+.REQUIREDSCRIPTS
+
+.EXTERNALSCRIPTDEPENDENCIES
+
+.RELEASENOTES
+
+
+.PRIVATEDATA
+
+#>
 
 <#
 .SYNOPSIS
@@ -11,9 +42,8 @@
     ComputerName;OperatingSystem;Date;Time;GMT;PasswordID;RecoveryPassword;DistinguishedName
 
  Requirement of the script:
-    - Active Directory PowerShell Module
+    - ActiveDirectory PowerShell Module
     - Needed rights to view AD BitLocker Recovery Info
-
  
  Usage:
     .\Get-ADComputers-BitLockerInfo.ps1
@@ -43,18 +73,6 @@
     Optional parameter to set name for log files
 
 
-.NOTES
-   File Name  : Get-ADComputers-BitLockerInfo.ps1
-   Version    : 2.0
-   Date       : 2018.07.03
-   Author     : Andriy Zarevych
-
-   Find me on :
-   * My Blog  :	https://angry-admin.blogspot.com/
-   * LinkedIn :	https://linkedin.com/in/zarevych/
-   * Github   :	https://github.com/zarevych
-
-
 .EXAMPLE
    .\Get-ADComputers-BitLockerInfo.ps1
 
@@ -76,7 +94,22 @@
    -----------
    Generates a CSV file with specific name and path
 
+
+.NOTES
+   File Name  : Get-ADComputers-BitLockerInfo.ps1
+   Version    : 2.0
+   Date       : 2018.07.03
+   Author     : Andriy Zarevych
+
+   Find me on :
+   * My Blog  :	https://angry-admin.blogspot.com/
+   * LinkedIn :	https://linkedin.com/in/zarevych/
+   * Github   :	https://github.com/zarevych
+
 #>
+
+#Requires -Modules ActiveDirectory
+#Requires -Version 2.0
 
 #---------------------------------------------------------[Initialisations]--------------------------------------------------------
 
@@ -158,7 +191,7 @@ foreach ($Computer in $Computers) {
     
         #The name of the BitLocker recovery object incorporates a globally unique identifier (GUID) and date and time information, 
         #for a fixed length of 63 characters. The form is: <Object Creation Date and Time><Recovery GUID>
-        #For example:
+        #For example:   
         #2005-09-30T17:08:23-08:00{063EA4E1-220C-4293-BA01-4754620A96E7}
         #$BitLockerObject.Name
         $strComputerDate = $BitLockerObject.Name.Substring(0,10)
